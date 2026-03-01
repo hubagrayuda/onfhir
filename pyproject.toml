@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "onfhir"
+version = "0.0.1"
+description = "A lightweight Python toolkit for working with FHIR APIs and resources"
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.12"
+
+authors = [
+    { name = "Agra Bima Yuda", email = "hub.agrayuda@gmail.com" }
+]
+
+keywords = ["FHIR", "healthcare", "HL7", "API", "interoperability"]
+
+dependencies = [
+    "black>=26.1.0",
+    "cfgv>=3.5.0",
+    "click>=8.3.1",
+    "distlib>=0.4.0",
+    "filelock>=3.24.3",
+    "identify>=2.6.16",
+    "mypy_extensions>=1.1.0",
+    "nodeenv>=1.10.0",
+    "packaging>=26.0",
+    "pathspec>=1.0.4",
+    "platformdirs>=4.9.2",
+    "pre_commit>=4.5.1",
+    "python-discovery>=1.1.0",
+    "pytokens>=0.4.1",
+    "PyYAML>=6.0.3",
+    "ruff>=0.15.4",
+    "virtualenv>=21.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "ruff",
+    "pytest",
+]
+
+[project.urls]
+Homepage = "https://github.com/hubagrayuda/onfhir"
+Repository = "https://github.com/hubagrayuda/onfhir"
+Issues = "https://github.com/hubagrayuda/onfhir/issues"
+
+[tool.setuptools]
+packages = ["onfhir"]
+
+[tool.setuptools.package-data]
+onfhir = ["py.typed", "*.json", "*.yaml"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+ignore = []
+
+[tool.ruff.lint.isort]
+known-first-party = ["onfhir"]
